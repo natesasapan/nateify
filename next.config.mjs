@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     basePath: "/nateify",
-    output: "export"
+    output: "export",
+    images: {
+        unoptimized: true,
+    },
 };
 
 export default nextConfig;
