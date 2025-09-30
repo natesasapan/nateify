@@ -285,22 +285,22 @@ export default function Home() {
                   Hello!
                 </p>
                 <p className="text-lg">
-                  My name is Nate, and I'm a spring 2025 computer science graduate from the University of Georgia.
+                  My name is Nate, and I&aposm a spring 2025 computer science graduate from the University of Georgia.
                 </p>
                 <p>
                   When I first began my studies at the University of Georgia, I initially envisioned myself as a software engineer. I wanted to create programs and applications for people to solve complex problems. But as I progressed through my degree, I discovered something unexpected:
                 </p>
                 <p className="italic text-gray-300">
-                  My favorite moments weren't debugging code or optimizing algorithms - they were helping my teammates understand our API system, presenting technical projects to judges at Hackathon, or seeing relief on professors' faces after fixing classroom technology in real-time.
+                  My favorite moments weren&apos;t debugging code or optimizing algorithms - they were helping my teammates understand our API system, presenting technical projects to judges at Hackathon, or seeing relief on professors&apos; faces after fixing classroom technology in real-time.
                 </p>
                 <p className="font-medium">
-                  I realized that my true passion lies in using technology to solve people's problems and helping others to understand solutions at a more technical level.
+                  I realized that my true passion lies in using technology to solve people&apos;s problems and helping others to understand solutions at a more technical level.
                 </p>
                 <p>
                   As I continue my search for work, I am focused on honing my current skills and learning new ones in the process.
                 </p>
                 <p className="text-green-400 font-semibold">
-                  I'm eager to join your company and start contributing!
+                  I&apos;m eager to join your company and start contributing!
                 </p>
               </div>
             </div>

@@ -1,29 +1,25 @@
-import Image from "next/image";
-
 export default function Header() {
     return (
       <footer className="flex h-[80px] bg-black">
         <div className="grid grid-cols-3 h-full w-full">
           <div className="flex items-center gap-4 px-4 pb-3">
-            <Image 
+            <img 
               src="/album.png"
               width={55}
               height={55}
               alt="album"
-              >
-            </Image>
+              />
             <div className="pe-2">
               <h1 className="cursor-pointer hover:underline text-[14px] font-sans text-white">PORTFOLIO TYPE BEAT (feat. Next.js, Figma)</h1>
               <h2 className="block w-fit cursor-pointer hover:underline text-[11px] font-sans text-gray-300">Nate Sasapan, Figma, Next.js</h2>
             </div>
             <div className="cursor-pointer hover:scale-106">
-              <Image 
+              <img 
                 src="/check.png"
                 width={18}
                 height={18}
                 alt="check mark"
-                >
-              </Image>
+                />
             </div>
           </div>
           <div className="flex flex-col items-center justify-center pb-3">

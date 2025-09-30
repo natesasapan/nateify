@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 
@@ -9,28 +8,26 @@ export default function Header() {
             <div className="flex items-center px-5">
                 <div className="hover:scale-110 transition-colors duration-300">
                 <Link href='/'>
-                    <Image 
+                    <img 
                     src="/N.png"
                     width={50}
                     height={50}
                     alt="logo"
-                    >
-                    </Image>
+                    />
                 </Link>
                 </div>
             </div>
             <div className="flex justify-center items-center gap-2">
                 <div className="hover:scale-110 transition-colors duration-300 cursor-pointer">
                     <div className="relative group ">
-                        <a href="/">
-                        <Image
+                        <Link href="/">
+                        <img
                             src="/home.png"
                             width={45}
                             height={45}
-                            alt="logo"
-                        >
-                        </Image>
-                        </a>
+                            alt="home button"
+                        />
+                        </Link>
                         <div className="font-bold absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 bg-[#1f1f1f] text-white text-sm rounded opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none whitespace-nowrap">
                         Home
                         </div>
@@ -39,13 +36,12 @@ export default function Header() {
                 <div>
                     <Popover>
                     <PopoverButton className="flex px-3 gap-2 items-center bg-[#1f1f1f] h-[50px] rounded-4xl w-[500px] text-lg font-semibold text-white/50 border-3 border-transparent focus:outline-none data-active:text-white data-active:border-white data-focus:border-white data-hover:text-white">                    <div className="hover:scale-110 transition-colors duration-300">
-                        <Image
+                        <img
                             src="/search.png"
                             width={25}
                             height={25}
-                            alt="logo"
-                            >
-                        </Image>
+                            alt="search button"
+                            />
                         </div>
                         Check out my projects!
                     </PopoverButton>
@@ -69,13 +65,12 @@ export default function Header() {
                 <div className="flex px-5">
                 <div className="flex gap-2 hover:scale-105 transition-colors duration-300 opacity-80 hover:opacity-100">
                     <Link className="flex items-center gap-1" href='/message'>
-                    <Image 
+                    <img 
                         src="/message.png"
                         width={25}
                         height={25}
-                        alt="logo"
-                        >
-                    </Image>
+                        alt="mail"
+                        />
                     <h1 className="font-serif">send me a message!</h1>
                     </Link>
                 </div>
@@ -83,13 +78,12 @@ export default function Header() {
                 <div className="hover:scale-110 transition-colors duration-300 opacity-80 hover:opacity-100">
                 <div className="relative group">
                     <Link href='https://github.com/natesasapan'>
-                    <Image 
+                    <img 
                         src="/github.png"
                         width={35}
                         height={35}
-                        alt="logo"
-                        >
-                    </Image>
+                        alt="github logo"
+                        />
                     </Link>
                     <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 bg-[#1f1f1f] text-white text-sm rounded opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none whitespace-nowrap">
                     Github
@@ -99,13 +93,12 @@ export default function Header() {
                 <div className="hover:scale-110 transition-colors duration-300 opacity-80 hover:opacity-100">
                 <div className="relative group">
                     <Link href='https://www.linkedin.com/in/nate-sasapan-901115255/'>
-                    <Image 
+                    <img 
                         src="/linkedin.png"
                         width={30}
                         height={30}
-                        alt="logo"
-                        >
-                    </Image>
+                        alt="linkedin logo"
+                        />
                     </Link>
                     <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 bg-[#1f1f1f] text-white text-sm rounded opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none whitespace-nowrap">
                     Linkedin
@@ -114,13 +107,12 @@ export default function Header() {
                 </div>
                 <div className="hover:scale-110 transition-colors duration-300 opacity-80 hover:opacity-100 pl-2">
                     <Link href='/kittycats'>
-                    <Image 
+                    <img 
                         src="/kittycat.png"
                         width={50}
                         height={50}
                         alt="logo"
-                        >
-                    </Image>
+                        />
                     </Link>
                 </div>
             </div>
