@@ -16,7 +16,7 @@ export default function Home() {
   const [networkIndex, setNetworkIndex] = useState(0);  
   
   // Project States
-  const [projectIndex, setProjectIndex] = useState(0);
+  const [projectIndex, setProjectIndex] = useState(-1);
 
   // Work Data
   const workData = [
@@ -365,22 +365,23 @@ export default function Home() {
           
           {/* Album Cover */}
           <div className="flex flex-col items-center">
-            <img src="/nate.jpg" className="w-55 h-55 rounded mb-2"/>
+            {/* 6-7 loooooool                   ⬇ */}
+            <img src="/nate.jpg" className="w-67 h-67 rounded mb-2"/>
           </div>
 
           {/* Album Details */}
           <div>
-            <h1 className="text-[16px] font-bold font-inter tracking-tight mt-1">Nate Sasapan</h1>
+            <h1 className="text-[20px] font-bold font-inter tracking-tight mt-1">Nate Sasapan</h1>
 
             {/* Album Pic and username */}
             <div className="flex items-center gap-1">
-              <img className="w-5 h-5" src="/kittycat.png"></img>
-              <h1 className="text-[10px] font-bold font-inter">nsasapan</h1>
+              <img className="w-6 h-6" src="/kittycat.png"></img>
+              <h1 className="text-[12px] font-bold font-inter">nsasapan</h1>
             </div>
             
             {/* Save count and Length */}
             <div className="flex items-center mt-1">
-              <h1 className="text-[10px] opacity-60">🌐 &nbsp;&nbsp;8 saves · 25h 42m</h1>
+              <h1 className="text-[12px] opacity-60">🌐 8 saves · 25h 42m</h1>
             </div>
 
             {/* Buttons */}
