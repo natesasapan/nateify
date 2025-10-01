@@ -3,6 +3,7 @@ import { useState } from "react";
 import React, { Fragment } from 'react';
 import Header from './components/Header.js'
 import Footer from './components/Footer.js'
+import { MobileHeader } from "./components/Header.js";
 
 export default function Home() {  
   // Work States
@@ -15,7 +16,7 @@ export default function Home() {
   const [networkIndex, setNetworkIndex] = useState(0);  
   
   // Project States
-  const [projectIndex, setProjectIndex] = useState(7);
+  const [projectIndex, setProjectIndex] = useState(0);
 
   // Work Data
   const workData = [
@@ -114,241 +115,350 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header/>
-      <main className="flex flex-row bg-black p-2 gap-2 h-[calc(100vh-140px)]">
-        <div className='flex flex-col gap-5 items-center rounded-lg bg-[#121212] text-white w-1/28'>
-          <img src="/P.png" className="w-10 h-10 opacity-80 hover:opacity-100 mt-4 mb-4"></img>
-          {projectData.map((row, index) => (
-                <React.Fragment key={index}>
-                <div className="relative group">
-                  <div className="hover:ring-10 ho hover:ring-[#1f1f1f] rounded">
-                    <img key={`${index}-src`} src={row.imgSrc} className="rounded-lg w-12 h-12 cursor-pointer "></img>
+      
+      {/* Web Layout */}
+      <div className="hidden md:block">
+        <Header/>
+        <main className="flex flex-row bg-black p-2 gap-2 h-[calc(100vh-140px)]">
+          <div className='flex flex-col gap-5 items-center rounded-lg bg-[#121212] text-white w-16'>
+            <img src="/P.png" className="w-10 h-10 opacity-80 hover:opacity-100 mt-4 mb-4"></img>
+            {projectData.map((row, index) => (
+                  <React.Fragment key={index}>
+                  <div className="relative group">
+                    <div className="hover:ring-10 ho hover:ring-[#1f1f1f] rounded">
+                      <img key={`${index}-src`} src={row.imgSrc} className="rounded-lg w-12 h-12 cursor-pointer "></img>
+                    </div>
+                    <div key={`${index}-title`} className="absolute left-full top-1/2 transform -translate-y-1/2 ml-4 px-3 py-1 bg-[#1f1f1f] text-white text-m rounded opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 pointer-events-none whitespace-nowrap">
+                      <div className="font-semibold">
+                        {row.title}
+                      </div>
+                      <div className="text-sm text-gray-400">
+                        {row.category} • nsasapan
+                      </div>
+                    </div>
                   </div>
-                  <div key={`${index}-title`} className="absolute left-full top-1/2 transform -translate-y-1/2 ml-4 px-3 py-1 bg-[#1f1f1f] text-white text-m rounded opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 pointer-events-none whitespace-nowrap">
-                    <div className="font-semibold">
-                      {row.title}
-                    </div>
-                    <div className="text-sm text-gray-400">
-                      {row.category} • nsasapan
-                    </div>
+                  </React.Fragment>
+                ))}      
+          </div>
+          <div className="flex-1 bg-gradient-to-b from-[#1700b4] via-[#121212] rounded-lg overflow-y-auto">
+            <div className="m-6 flex-col">
+              <div className="flex flex-1">
+                <img src="/nate.jpg" className="w-58 h-58 rounded-lg"></img>
+                <div className="flex flex-col m-6 pt-8">
+                  <h1 className="text-sm font-inter">Software Developer</h1>
+                  <h1 className="font-black tracking-tight font-inter text-[85px]">Nate Sasapan</h1>
+                  <div className="flex items-center text-sm">
+                    <img src="/kittycat.png" className="w-8 h-8"></img>
+                      <div className="relative group">
+                        <a href="https://open.spotify.com/user/nsasapan">
+                          <h1 className="font-bold p-1 cursor-pointer hover:underline">nsasapan</h1>
+                        </a>
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 bg-[#1f1f1f] text-white text-sm rounded opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none whitespace-nowrap">
+                          Check out my Spotify!
+                        </div>
+                      </div>
+                    <h1 className="text-gray-300">• University of Georgia Alumni • B.S. Computer Science</h1>
                   </div>
                 </div>
-                </React.Fragment>
-              ))}      
-        </div>
-        <div className="flex-1 bg-gradient-to-b from-[#1700b4] via-[#121212] rounded-lg overflow-y-auto">
-          <div className="m-6 flex-col">
-            <div className="flex flex-1">
-              <img src="/nate.jpg" className="w-58 h-58 rounded-lg"></img>
-              <div className="flex flex-col m-6 pt-8">
-                <h1 className="text-sm font-inter">Software Developer</h1>
-                <h1 className="font-black tracking-tight font-inter text-[85px]">Nate Sasapan</h1>
-                <div className="flex items-center text-sm">
-                  <img src="/kittycat.png" className="w-8 h-8"></img>
-                    <div className="relative group">
-                      <a href="https://open.spotify.com/user/nsasapan">
-                        <h1 className="font-bold p-1 cursor-pointer hover:underline">nsasapan</h1>
+              </div>
+              <div className="flex pt-3 gap-5 items-center">
+                <img src="/greenPlay.png" className="w-15 h-15 hover:scale-110 cursor-pointer"></img>
+                <img src="/preview.png" className="w-10 h-10 hover:scale-110 cursor-pointer h-full"></img>
+                <img src="/shuffle.png" className="w-8 h-8 hover:scale-110 cursor-pointer h-full"></img>
+
+                <div className="relative group inline-block">
+                  <a href="/resume">
+                    <img src="/download.png" className="w-7 h-7 hover:scale-110 opacity-80 hover:opacity-100 cursor-pointer h-full"></img>                </a>
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-4 px-3 py-1 bg-[#1f1f1f] text-white text-sm rounded opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none whitespace-nowrap">
+                    Download my resume!
+                  </div>
+                </div>
+                <div className="relative group inline-block">
+                  <a href="https://www.linkedin.com/in/nate-sasapan-901115255/">
+                    <img src="/friend.png" className="w-7 h-7 hover:scale-110 opacity-80 hover:opacity-100 cursor-pointer h-full"></img>
+                  </a>
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-4 px-3 py-1 bg-[#1f1f1f] text-white text-sm rounded opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none whitespace-nowrap">
+                    Add me on Linkedin!
+                  </div>
+                </div>
+                <img src="/options.png" className="w-7 h-7 hover:scale-110 opacity-80 hover:opacity-100 cursor-pointer h-full"></img>
+              </div>
+              <div className="grid grid-cols-[1fr_18fr_12fr_12fr_1fr] gap-0 text-gray-400 pt-5">
+                {/* Header */}
+                <div className="pb-1 mb-5 ps-5 border-b border-gray-700 text-[14px]">#</div>
+                <div className="pb-1 mb-5 ps-2 border-b border-gray-700 text-[14px]">Title</div>
+                <div className="pb-1 mb-5 border-b border-gray-700 text-[14px]">Date Started</div>
+                <div className="pb-1 mb-5 border-b border-gray-700 text-[14px]">Date Finished</div>
+                <div className="pb-1 mb-5 border-b border-gray-700 ps-1">
+                  <img src="/clock.png" className="w-4 h-4"></img>
+                </div>
+
+                
+                {/* Data rows */}
+                {workData.map((row, index) => (
+                  <React.Fragment key={index}>
+                    <div key={`${index}-number`} className="ps-5 pb-3 pt-3 font-mono">{index + 1}</div>
+                    <div key={`${index}-title`} className="pb-3 pt-1 ps-2">
+                      <div className="flex gap-3">
+                        <img src={row.imgSrc} className="w-10 h-10 rounded"></img>
+                        <div className="flex-1 min-w-0">
+                          <h3 
+                            onClick={() => {
+                            if ((index === 0 && !networkOpen) || 
+                                (index === 1 && !techOpen) || 
+                                (index === 2 && !researchOpen) || 
+                                (index === 3 && !studentOpen)) {
+                              
+                              setNetworkOpen(index === 0);
+                              setTechOpen(index === 1);
+                              setResearchOpen(index === 2);
+                              setStudentOpen(index === 3);
+                            }
+                            setNowPlaying(true);
+                          }} 
+                          className="text-m text-white truncate hover:underline cursor-pointer">{row.title}</h3>
+                          <p className="text-gray-500 text-[14px] truncate hover:underline cursor-pointer">{row.company}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div key={`${index}-dateStarted`} className="pb-3 pt-3 text-gray-400 text-[14px]">{row.dateStarted}</div>
+                    <div key={`${index}-dateFinished`} className="pb-3 pt-3 text-gray-400 text-[14px]">{row.dateFinished}</div>
+                    <div key={`${index}-time`} className="pb-3 pt-3 text-gray-400 text-[14px]">{row.time}</div>
+                  </React.Fragment>
+                ))}            
+                
+              </div>
+              <h1 className="pt-8 font-inter font-bold text-[24px]"> Projects </h1>
+              <div className="flex pt-3 gap-3">
+                {projectData.map((row, index) => (
+                  <React.Fragment key={index}>
+                    <div className={`flex flex-col gap-2 ${index === projectIndex ? 'bg-[#1f1f1f] p-4 rounded-xl' : 'mt-5'} rounded pb-10 cursor-pointer`}
+                      onClick={() => {
+                        if (projectIndex === index) {
+                          setProjectIndex(-1);
+                        }
+                        else {
+                          setProjectIndex(index);
+                        }
+                      }} 
+                    >
+                      
+                      <img 
+                        key={`${index}-src`} src={row.imgSrc} 
+                        className={`rounded-lg ${index === projectIndex ? 'w-75 h-75' : 'w-45 h-45'} cursor-pointer transition-all duration-300`}>
+                      </img>
+                      <div>
+                        <h1 
+                          key={`${index}-src`} 
+                          className={`text-white ${index === projectIndex ? 'text-[20px]' : 'text-[16px]'} transition-all duration-300 font-inter `}>{row.title}</h1>
+                        <h2 key={`${index}-album-yr`}className="text-gray-400 text-[14px] font-inter ">{row.category} • {row.year}</h2>
+                      </div>
+                    </div>
+                  </React.Fragment>
+                ))}  
+
+              </div>
+
+              <div className="mt-10">
+                {projectItem ? (
+                  <>
+                    <div className="text-gray-200 bg-[#1f1f1f] rounded-xl p-3 mb-5">
+                      <a href={projectItem.gitLink}>
+                        <h1 className="text-blue-400 hover:underline text-[20px]">GitHub - {projectItem.title}</h1>
                       </a>
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 bg-[#1f1f1f] text-white text-sm rounded opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none whitespace-nowrap">
-                        Check out my Spotify!
-                      </div>
+                      <hr className="mt-2 mb-2"></hr>
+                      <ul className="text-gray-200 list-disc list-inside rounded-xl">
+                        <li>{projectItem.duty1}</li>
+                        <li>{projectItem.duty2}</li>
+                        <li>{projectItem.duty3}</li>
+                      </ul>
                     </div>
-                  <h1 className="text-gray-300">• University of Georgia Alumni • B.S. Computer Science</h1>
+                  </>
+                ) : (
+                  <>
+                  </>
+              )} 
+              </div>
+
+              <h1 className="pt-8 font-inter font-bold text-[24px]"> About </h1>
+              <div className="flex items-center">
+                <div></div>
+                <img src="/nate2.png" className={`mt-5 me-5 rounded-xl h-auto ${nowPlaying ? 'w-140' : 'w-210'}`}></img>
+                <div className={`text-white space-y-4 leading-relaxed mt-5 font-inter overflow-hidden ${nowPlaying ? 'h-100 overflow-y-auto' : ''}`}>
+                  <p className="text-3xl font-bold">
+                    Hello!
+                  </p>
+                  <p className="text-lg">
+                    My name is Nate, and I&aposm a spring 2025 computer science graduate from the University of Georgia.
+                  </p>
+                  <p>
+                    When I first began my studies at the University of Georgia, I initially envisioned myself as a software engineer. I wanted to create programs and applications for people to solve complex problems. But as I progressed through my degree, I discovered something unexpected:
+                  </p>
+                  <p className="italic text-gray-300">
+                    My favorite moments weren&apos;t debugging code or optimizing algorithms - they were helping my teammates understand our API system, presenting technical projects to judges at Hackathon, or seeing relief on professors&apos; faces after fixing classroom technology in real-time.
+                  </p>
+                  <p className="font-medium">
+                    I realized that my true passion lies in using technology to solve people&apos;s problems and helping others to understand solutions at a more technical level.
+                  </p>
+                  <p>
+                    As I continue my search for work, I am focused on honing my current skills and learning new ones in the process.
+                  </p>
+                  <p className="text-green-400 font-semibold">
+                    I&apos;m eager to join your company and start contributing!
+                  </p>
                 </div>
-              </div>
-            </div>
-            <div className="flex pt-3 gap-5 items-center">
-              <img src="/greenPlay.png" className="w-15 h-15 hover:scale-110 cursor-pointer"></img>
-              <img src="/preview.png" className="w-10 h-10 hover:scale-110 cursor-pointer h-full"></img>
-              <img src="/shuffle.png" className="w-8 h-8 hover:scale-110 cursor-pointer h-full"></img>
-
-              <div className="relative group inline-block">
-                <a href="/resume">
-                  <img src="/download.png" className="w-7 h-7 hover:scale-110 opacity-80 hover:opacity-100 cursor-pointer h-full"></img>                </a>
-                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-4 px-3 py-1 bg-[#1f1f1f] text-white text-sm rounded opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none whitespace-nowrap">
-                  Download my resume!
-                </div>
-              </div>
-              <div className="relative group inline-block">
-                <a href="https://www.linkedin.com/in/nate-sasapan-901115255/">
-                  <img src="/friend.png" className="w-7 h-7 hover:scale-110 opacity-80 hover:opacity-100 cursor-pointer h-full"></img>
-                </a>
-                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-4 px-3 py-1 bg-[#1f1f1f] text-white text-sm rounded opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none whitespace-nowrap">
-                  Add me on Linkedin!
-                </div>
-              </div>
-              <img src="/options.png" className="w-7 h-7 hover:scale-110 opacity-80 hover:opacity-100 cursor-pointer h-full"></img>
-            </div>
-            <div className="grid grid-cols-[1fr_18fr_12fr_12fr_1fr] gap-0 text-gray-400 pt-5">
-              {/* Header */}
-              <div className="pb-1 mb-5 ps-5 border-b border-gray-700 text-[14px]">#</div>
-              <div className="pb-1 mb-5 ps-2 border-b border-gray-700 text-[14px]">Title</div>
-              <div className="pb-1 mb-5 border-b border-gray-700 text-[14px]">Date Started</div>
-              <div className="pb-1 mb-5 border-b border-gray-700 text-[14px]">Date Finished</div>
-              <div className="pb-1 mb-5 border-b border-gray-700 ps-1">
-                <img src="/clock.png" className="w-4 h-4"></img>
-              </div>
-
-              
-              {/* Data rows */}
-              {workData.map((row, index) => (
-                <React.Fragment key={index}>
-                  <div key={`${index}-number`} className="ps-5 pb-3 pt-3 font-mono">{index + 1}</div>
-                  <div key={`${index}-title`} className="pb-3 pt-1 ps-2">
-                    <div className="flex gap-3">
-                      <img src={row.imgSrc} className="w-10 h-10 rounded"></img>
-                      <div className="flex-1 min-w-0">
-                        <h3 
-                          onClick={() => {
-                          if ((index === 0 && !networkOpen) || 
-                              (index === 1 && !techOpen) || 
-                              (index === 2 && !researchOpen) || 
-                              (index === 3 && !studentOpen)) {
-                            
-                            setNetworkOpen(index === 0);
-                            setTechOpen(index === 1);
-                            setResearchOpen(index === 2);
-                            setStudentOpen(index === 3);
-                          }
-                          setNowPlaying(true);
-                        }} 
-                        className="text-m text-white truncate hover:underline cursor-pointer">{row.title}</h3>
-                        <p className="text-gray-500 text-[14px] truncate hover:underline cursor-pointer">{row.company}</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div key={`${index}-dateStarted`} className="pb-3 pt-3 text-gray-400 text-[14px]">{row.dateStarted}</div>
-                  <div key={`${index}-dateFinished`} className="pb-3 pt-3 text-gray-400 text-[14px]">{row.dateFinished}</div>
-                  <div key={`${index}-time`} className="pb-3 pt-3 text-gray-400 text-[14px]">{row.time}</div>
-                </React.Fragment>
-              ))}            
-              
-            </div>
-            <h1 className="pt-8 font-inter font-bold text-[24px]"> Projects </h1>
-            <div className="flex pt-3 gap-3">
-              {projectData.map((row, index) => (
-                <React.Fragment key={index}>
-                  <div className={`flex flex-col gap-2 ${index === projectIndex ? 'bg-[#1f1f1f] p-4 rounded-xl' : 'mt-5'} rounded pb-10 cursor-pointer`}
-                    onClick={() => {
-                      if (projectIndex === index) {
-                        setProjectIndex(-1);
-                      }
-                      else {
-                        setProjectIndex(index);
-                      }
-                    }} 
-                  >
-                    
-                    <img 
-                      key={`${index}-src`} src={row.imgSrc} 
-                      className={`rounded-lg ${index === projectIndex ? 'w-75 h-75' : 'w-45 h-45'} cursor-pointer transition-all duration-300`}>
-                    </img>
-                    <div>
-                      <h1 
-                        key={`${index}-src`} 
-                        className={`text-white ${index === projectIndex ? 'text-[20px]' : 'text-[16px]'} transition-all duration-300 font-inter `}>{row.title}</h1>
-                      <h2 key={`${index}-album-yr`}className="text-gray-400 text-[14px] font-inter ">{row.category} • {row.year}</h2>
-                    </div>
-                  </div>
-                </React.Fragment>
-              ))}  
-
-            </div>
-
-            <div className="mt-10">
-              {projectItem ? (
-                <>
-                  <div className="text-gray-200 bg-[#1f1f1f] rounded-xl p-3 mb-5">
-                    <a href={projectItem.gitLink}>
-                      <h1 className="text-blue-400 hover:underline text-[20px]">GitHub - {projectItem.title}</h1>
-                    </a>
-                    <hr className="mt-2 mb-2"></hr>
-                    <ul className="text-gray-200 list-disc list-inside rounded-xl">
-                      <li>{projectItem.duty1}</li>
-                      <li>{projectItem.duty2}</li>
-                      <li>{projectItem.duty3}</li>
-                    </ul>
-                  </div>
-                </>
-              ) : (
-                <>
-                </>
-            )} 
-            </div>
-
-            <h1 className="pt-8 font-inter font-bold text-[24px]"> About </h1>
-            <div className="flex items-center">
-              <div></div>
-              <img src="/nate2.png" className={`mt-5 me-5 rounded-xl h-auto ${nowPlaying ? 'w-140' : 'w-210'}`}></img>
-              <div className={`text-white space-y-4 leading-relaxed mt-5 font-inter overflow-hidden ${nowPlaying ? 'h-100 overflow-y-auto' : ''}`}>
-                <p className="text-3xl font-bold">
-                  Hello!
-                </p>
-                <p className="text-lg">
-                  My name is Nate, and I&aposm a spring 2025 computer science graduate from the University of Georgia.
-                </p>
-                <p>
-                  When I first began my studies at the University of Georgia, I initially envisioned myself as a software engineer. I wanted to create programs and applications for people to solve complex problems. But as I progressed through my degree, I discovered something unexpected:
-                </p>
-                <p className="italic text-gray-300">
-                  My favorite moments weren&apos;t debugging code or optimizing algorithms - they were helping my teammates understand our API system, presenting technical projects to judges at Hackathon, or seeing relief on professors&apos; faces after fixing classroom technology in real-time.
-                </p>
-                <p className="font-medium">
-                  I realized that my true passion lies in using technology to solve people&apos;s problems and helping others to understand solutions at a more technical level.
-                </p>
-                <p>
-                  As I continue my search for work, I am focused on honing my current skills and learning new ones in the process.
-                </p>
-                <p className="text-green-400 font-semibold">
-                  I&apos;m eager to join your company and start contributing!
-                </p>
               </div>
             </div>
           </div>
-        </div>
-        <div className={`flex flex-col gap-4 group items-center rounded-lg bg-[#121212] text-white ${
-          nowPlaying ? 'w-9/40 items-start pl-4 pe-4 overflow-y-auto' : 'hidden'
-        } overflow-hidden`}>
-          <div className="flex items-center pt-4">
-            <button
-              onClick={() => {
-                setNowPlaying(!nowPlaying);
-                setNetworkOpen(!networkOpen);
-                setTechOpen(!techOpen);
-                setResearchOpen(!researchOpen);
-                setStudentOpen(!studentOpen);
+          <div className={`flex flex-col gap-4 group items-center rounded-lg bg-[#121212] text-white ${
+            nowPlaying ? 'w-9/40 items-start pl-4 pe-4 overflow-y-auto' : 'hidden'
+          } overflow-hidden`}>
+            <div className="flex items-center pt-4">
+              <button
+                onClick={() => {
+                  setNowPlaying(!nowPlaying);
+                  setNetworkOpen(!networkOpen);
+                  setTechOpen(!techOpen);
+                  setResearchOpen(!researchOpen);
+                  setStudentOpen(!studentOpen);
+                  }
                 }
-              }
-              className="opacity-0 -translate-x-7 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
-              >
-            <img src="/close.png" className="w-6 h-6 opacity-80 hover:opacity-100"></img>
-          </button>
-          <h1 className="font-bold ps-2 text-lg -translate-x-8 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">Now Playing</h1>
+                className="opacity-0 -translate-x-7 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+                >
+              <img src="/close.png" className="w-6 h-6 opacity-80 hover:opacity-100"></img>
+            </button>
+            <h1 className="font-bold ps-2 text-lg -translate-x-8 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">Now Playing</h1>
+            </div>
+            {activeItem ? (
+              <>
+                <img src={activeItem.imgSrc} alt={activeItem.title} className="rounded-xl"/>
+                <div>
+                  <h1 className="font-bold text-2xl">{activeItem.title}</h1>
+                  <h1 className="text-gray-400 text-lg">{activeItem.company}</h1>
+                </div>
+                  <ul className="text-gray-200 list-disc list-inside bg-[#1f1f1f] rounded-xl p-3 mb-5 ring-7 ring-[#1f1f1f] list-outside">
+                    <li>{activeItem.duty1}</li>
+                    <br></br>
+                    <li>{activeItem.duty2}</li>
+                    <br></br>
+                    <li>{activeItem.duty3}</li>
+                  </ul>
+              </>
+            ) : (
+              <>
+                <img src="/default.png" alt="" />
+                <h1 className="font-bold text-2xl">Nothing Selected</h1>
+              </>
+            )}
+            <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#121212] to-transparent pointer-events-none rounded-b-lg"></div>
           </div>
-          {activeItem ? (
-            <>
-              <img src={activeItem.imgSrc} alt={activeItem.title} className="rounded-xl"/>
-              <div>
-                <h1 className="font-bold text-2xl">{activeItem.title}</h1>
-                <h1 className="text-gray-400 text-lg">{activeItem.company}</h1>
+        </main>
+        <Footer/>
+      </div>
+
+      {/* Mobile Layout */}
+      <div className="block md:hidden">
+        <MobileHeader/>
+        <main className="bg-[#1f1f1f] p-4" style={{
+          background: 'linear-gradient(to bottom, #1700b4 0px, #121212 300px, #121212 100%)'
+        }}>
+          
+          {/* Album Cover */}
+          <div className="flex flex-col items-center">
+            <img src="/nate.jpg" className="w-55 h-55 rounded mb-2"/>
+          </div>
+
+          {/* Album Details */}
+          <div>
+            <h1 className="text-[16px] font-bold font-inter tracking-tight mt-1">Nate Sasapan</h1>
+
+            {/* Album Pic and username */}
+            <div className="flex items-center gap-1">
+              <img className="w-5 h-5" src="/kittycat.png"></img>
+              <h1 className="text-[10px] font-bold font-inter">nsasapan</h1>
+            </div>
+            
+            {/* Save count and Length */}
+            <div className="flex items-center mt-1">
+              <h1 className="text-[10px] opacity-60">🌐 &nbsp;&nbsp;8 saves · 25h 42m</h1>
+            </div>
+
+            {/* Buttons */}
+            <div className="grid grid-cols-[2fr_1fr]">
+
+              {/* Left Section */}
+              <div className="flex pt-3 gap-5 items-center">
+                  <img src="/preview.png" className="w-8 h-auto"></img>
+                  <a href="/resume">
+                    <img src="/download.png" className="w-4 h-4 hover:scale-110 opacity-80 hover:opacity-100 cursor-pointer h-full"></img>                
+                  </a>
+                  <a href="https://www.linkedin.com/in/nate-sasapan-901115255/">
+                    <img src="/friend.png" className="w-4 h-4 hover:scale-110 opacity-80 hover:opacity-100 cursor-pointer h-full"></img>
+                  </a>
+                <img src="/options.png" className="w-4 h-4 hover:scale-110 opacity-80 hover:opacity-100 cursor-pointer"></img>
               </div>
-                <ul className="text-gray-200 list-disc list-inside bg-[#1f1f1f] rounded-xl p-3 mb-5 ring-7 ring-[#1f1f1f] list-outside">
-                  <li>{activeItem.duty1}</li>
-                  <br></br>
-                  <li>{activeItem.duty2}</li>
-                  <br></br>
-                  <li>{activeItem.duty3}</li>
+
+              {/* Right Section */}
+              <div className="flex justify-end items-center gap-4 ">
+                <img src="/shuffle.png" className="w-6 h-6 hover:scale-110 opacity-80 cursor-pointer"></img>
+                <img src="/greenPlay.png" className="w-12 h-12 hover:scale-110 cursor-pointer"></img>
+              </div>
+            </div>
+            
+          </div>
+
+          {/* Work Experience as expandable song cards */}
+          <div className="mt-6"></div>
+
+          {workData.map((job, index) => (
+            <div key={index} className={`rounded p-1 cursor-pointer transition-all duration-100 ${projectIndex  === index ? 'bg-[#1f1f1f]' : 'bg-[#121212]'}`}>
+              <div 
+                className="flex gap-2 mb-2 items-center"
+                  onClick={() => {
+                    if (projectIndex === index) {
+                      setProjectIndex(-1);
+                    } else {
+                      setProjectIndex(index);
+                    }
+                  }} 
+                >
+                <img src={job.imgSrc} className="w-10 h-10 rounded"></img>
+                <div className="flex flex-col justify-center items-start">
+                  <h1 className="text-[14px]">{job.title}</h1>
+                  <h1 className="text-[11px] opacity-60">{job.company}</h1>
+                </div>
+                <img src="/options.png" className="ml-auto w-5 h-5"></img>
+              </div>
+              <div className={`${projectIndex === index ? '' : 'hidden'}`}>
+                <h1 className="text-xs opacity-80 pt-2">
+                  {job.dateStarted} - {job.dateFinished}
+                </h1>
+                <ul className="text-gray-300 text-sm space-y-2 list-disc list-outside p-2 pl-4">
+                  <li>{job.duty1}</li>
+                  <li>{job.duty2}</li>
+                  <li>{job.duty3}</li>
                 </ul>
-            </>
-          ) : (
-            <>
-              <img src="/default.png" alt="" />
-              <h1 className="font-bold text-2xl">Nothing Selected</h1>
-            </>
-          )}
-          <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#121212] to-transparent pointer-events-none rounded-b-lg"></div>
-        </div>
-      </main>
-      <Footer/>
+              </div>
+            </div>
+          ))}
+
+          {/* Projects */}
+          <h2 className="text-2xl font-bold text-white mb-4 mt-8">Projects</h2>
+          {projectData.map((project, index) => (
+            <div key={index} className="bg-[#1f1f1f] rounded-lg p-4 mb-4">
+              <img src={project.imgSrc} className="w-full rounded-lg mb-3"/>
+              <h3 className="text-white font-bold text-lg">{project.title}</h3>
+              <p className="text-gray-400 text-sm mb-2">
+                {project.category} • {project.year}
+              </p>
+              <p className="text-gray-300 text-sm mb-3">{project.description}</p>
+              <a href={project.gitLink} className="text-blue-400 text-sm">
+                View on GitHub →
+              </a>
+            </div>
+          ))}
+        </main>
+      </div>
+      
     </div>
   );}

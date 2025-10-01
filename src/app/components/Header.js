@@ -120,3 +120,47 @@ export default function Header() {
         </header>
     );
 }
+
+export function MobileHeader() {
+    return (
+    <header className="bg-linear-to-b from-[#121212] to-[#1700b4] shadow-md w-full h-[80px] pt-2">
+            <div className="grid grid-cols-2 h-full">
+                <div className="flex items-center px-5">
+                    <h1 className="font-bold">nateify</h1>
+                </div>
+                <div className="flex items-center justify-end px-5 gap-2">
+                    <div className="hover:scale-110 transition-colors duration-300">
+                        <Link className="flex items-center gap-1" href='/message'>
+                            <img 
+                                src="/message.png"
+                                width={35}
+                                height={35}
+                                alt="mail"
+                            />
+                        </Link>
+                    </div>
+                    <div className="hover:scale-110 transition-colors duration-300 opacity-80 hover:opacity-100">
+                        <Link href='https://github.com/natesasapan'>
+                        <img 
+                            src="/github.png"
+                            width={40}
+                            height={40}
+                            alt="github logo"
+                            />
+                        </Link>
+                    </div>
+                    <div className="hover:scale-110 transition-colors duration-300 opacity-80 hover:opacity-100">
+                        <Link href='https://www.linkedin.com/in/nate-sasapan-901115255/'>
+                        <img 
+                            src="/linkedin.png"
+                            width={35}
+                            height={35}
+                            alt="linkedin logo"
+                            />
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </header>
+    );
+}
