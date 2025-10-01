@@ -1,4 +1,4 @@
-export default function Header() {
+export default function Footer() {
     return (
       <footer className="flex h-[80px] bg-black">
         <div className="grid grid-cols-3 h-full w-full">

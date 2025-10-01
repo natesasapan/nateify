@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
-import { useState, useEffect } from "react";
 
 export default function Header() {
     return (
