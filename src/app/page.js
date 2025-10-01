@@ -18,6 +18,9 @@ export default function Home() {
   // Project States
   const [projectIndex, setProjectIndex] = useState(-1);
 
+  // About Open State
+  const [aboutOpen, setAboutOpen] = useState(false);
+
   // Work Data
   const workData = [
     {title: 'Network Engineer Intern', imgSrc:'/ag.png', company: 'Ansan Group LLC', dateStarted: 'May 2024', dateFinished: 'July 2024', time: '2:24', duty1: 'Updated network documentation and asset inventory for 50+ devices, improving team efficiency and reducing troubleshooting time by 80%', duty2: 'Resolved Level 1 network connectivity issues via ticketing system, achieving average resolution time of 15 minutes', duty3: 'Conducted WiFi coverage analysis across facilities, identifying dead zones and recommending access point placement'},
@@ -409,8 +412,9 @@ export default function Home() {
           </div>
 
           {/* Work Experience as expandable song cards */}
-          <div className="mt-6"></div>
-
+          <hr className="mt-4 mb-3 opacity-60"></hr>
+            <h2 className="text-m font-bold text-white me-2">Experience </h2>
+            <h3 className="text-white text-[10px] opacity-60 mb-4">(click me!)</h3>
           {workData.map((job, index) => (
             <div key={index} className={`rounded p-1 cursor-pointer transition-all duration-100 ${projectIndex  === index ? 'bg-[#1f1f1f]' : 'bg-[#121212]'}`}>
               <div 
@@ -444,7 +448,7 @@ export default function Home() {
           ))}
 
           {/* Projects */}
-          <h2 className="text-2xl font-bold text-white mb-4 mt-8">Projects</h2>
+          <h2 className="text-m font-bold text-white mb-4 mt-4">Projects</h2>
           {projectData.map((project, index) => (
             <div key={index} className="bg-[#1f1f1f] rounded-lg p-4 mb-4">
               <img src={project.imgSrc} className="w-full rounded-lg mb-3"/>
@@ -458,6 +462,46 @@ export default function Home() {
               </a>
             </div>
           ))}
+
+          {/* About */}
+          <h2 className="text-m font-bold text-white mt-4">About</h2>
+          <div className="bg-[#1f1f1f] rounded pt-4 pe-4 ps-4 pb-2 mt-2">
+            <div className="text-white font-inter">
+              <img src="/nate2.png" className=" rounded w-auto h-auto"></img>
+              
+              {/* Hide Overflow */}
+              <div className={`flex flex-col pt-4 gap-2 ${aboutOpen === true ? 'h-auto' : 'h-22' } overflow-hidden transition-all duration-300`}>
+                <h1>Hello!</h1>
+                <h1 className="text-[12px]">My name is Nate, and I&apos;m a spring 2025 computer science graduate from the University of Georgia.</h1>
+                <p className="text-[12px]">
+                  When I first began my studies at the University of Georgia, I envisioned myself as a software engineer creating programs and applications to solve complex problems. As I progressed through my degree, that vision only strengthened.
+                </p>
+                <p className="italic text-gray-300 text-[12px]">
+                  What I discovered was that the most rewarding aspects of engineering weren&apos;t just writing code - they were moments like architecting our team&apos;s API system, presenting technical projects to judges at Hackathons, and implementing real-time solutions to classroom technology challenges.
+                </p>
+                <p className="font-medium text-[12px]">
+                  I realized that my passion lies in building robust technical solutions while bridging the gap between complex systems and the people who use them.
+                </p>
+                <p className="text-[12px]">
+                  As I continue my search for a software engineering role, I am focused on deepening my technical expertise and expanding my skill set across the full development lifecycle.
+                </p>
+                <p className="text-green-400 font-semibold text-[12px]">
+                  I&apos;m eager to join your engineering team and start contributing!
+                </p>
+  
+              </div>
+
+              {/* Open/Close button */}
+              <h1 className="opacity-80 text-right text-[10px] pt-2" onClick={() => setAboutOpen(!aboutOpen)}>{aboutOpen ? 'see less' : 'see more'}</h1>
+          </div>
+        </div>
+
+        {/* Mobile Footer */}
+        {/* Subject to change */}
+        <div className="flex mt-10 justify-center">
+          <h1 className="text-center text-sm">created by nate sasapan · 2025 · next.js</h1>
+        </div>
+
         </main>
       </div>
       
