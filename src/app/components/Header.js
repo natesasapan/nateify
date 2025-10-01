@@ -71,7 +71,7 @@ export default function Header() {
                         height={25}
                         alt="mail"
                         />
-                    <h1 className="font-serif">send me a message!</h1>
+                    <h1 className="font-serif xl:block hidden ">send me a message!</h1>
                     </Link>
                 </div>
                 </div>

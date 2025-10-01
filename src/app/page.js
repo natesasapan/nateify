@@ -123,7 +123,7 @@ export default function Home() {
       <div className="hidden md:block">
         <Header/>
         <main className="flex flex-row bg-black p-2 gap-2 h-[calc(100vh-140px)]">
-          <div className='flex flex-col gap-5 items-center rounded-lg bg-[#121212] text-white w-16'>
+          <div className='flex flex-col gap-5 items-center rounded-lg bg-[#121212] text-white w-16 hidden 2xl:flex'>
             <img src="/P.png" className="w-10 h-10 opacity-80 hover:opacity-100 mt-4 mb-4"></img>
             {projectData.map((row, index) => (
                   <React.Fragment key={index}>
@@ -149,7 +149,7 @@ export default function Home() {
                 <img src="/nate.jpg" className="w-58 h-58 rounded-lg"></img>
                 <div className="flex flex-col m-6 pt-8">
                   <h1 className="text-sm font-inter">Software Developer</h1>
-                  <h1 className="font-black tracking-tight font-inter text-[85px]">Nate Sasapan</h1>
+                  <h1 className="font-black tracking-tight font-inter text-[50px] xl:text-[85px]">Nate Sasapan</h1>
                   <div className="flex items-center text-sm">
                     <img src="/kittycat.png" className="w-8 h-8"></img>
                       <div className="relative group">
@@ -200,7 +200,7 @@ export default function Home() {
                 {/* Data rows */}
                 {workData.map((row, index) => (
                   <React.Fragment key={index}>
-                    <div key={`${index}-number`} className="ps-5 pb-3 pt-3 font-mono">{index + 1}</div>
+                    <div key={`${index}-number`} className="ps-5 pb-3 pt-3 pe-3 font-mono">{index + 1}</div>
                     <div key={`${index}-title`} className="pb-3 pt-1 ps-2">
                       <div className="flex gap-3">
                         <img src={row.imgSrc} className="w-10 h-10 rounded"></img>
