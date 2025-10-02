@@ -5,6 +5,25 @@ import Header from './components/Header.js'
 import Footer from './components/Footer.js'
 import { MobileHeader } from "./components/Header.js";
 
+
+// Metadata
+export const metadata = {
+  title: 'Nateify',
+  description: 'Nate Sasapan - Software Developer Portfolio',
+  openGraph: {
+    title: 'Nateify',
+    description: 'Nate Sasapan - Software Developer Portfolio',
+    images: ['/N.png'],
+    url: 'https://natesasapan.me',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nateify',
+    description: 'Nate Sasapan - Software Developer Portfolio',
+    images: ['/N.png'],
+  },
+}
+
 export default function Home() {  
   // Work States
   const [nowPlaying, setNowPlaying] = useState(false);
