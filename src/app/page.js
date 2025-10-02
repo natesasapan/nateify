@@ -143,7 +143,7 @@ export default function Home() {
                   </React.Fragment>
                 ))}      
           </div>
-          <div className="flex-1 bg-gradient-to-b from-[#1700b4] via-[#121212] rounded-lg overflow-y-auto">
+          <div className="flex-1 bg-gradient-to-b from-[#1700b4] via-[#121212] rounded-lg overflow-y-auto custom-scrollbar">
             <div className="m-6 flex-col">
               <div className="flex flex-1">
                 <img src="/nate.jpg" className="w-58 h-58 rounded-lg"></img>
@@ -232,10 +232,10 @@ export default function Home() {
                 
               </div>
               <h1 className="pt-8 font-inter font-bold text-[24px]"> Projects </h1>
-              <div className="flex pt-3 gap-3">
+              <div className="flex pt-3 gap-3 overflow-x-auto overflow-y-hidden custom-scrollbar">
                 {projectData.map((row, index) => (
                   <React.Fragment key={index}>
-                    <div className={`flex flex-col gap-2 ${index === projectIndex ? 'bg-[#1f1f1f] p-4 rounded-xl' : 'mt-5'} rounded pb-10 cursor-pointer`}
+                    <div className={`flex flex-col gap-2 shrink-0 ${index === projectIndex ? 'bg-[#1f1f1f] p-4 rounded-xl' : 'mt-5'} rounded pb-10 cursor-pointer`}
                       onClick={() => {
                         if (projectIndex === index) {
                           setProjectIndex(-1);
@@ -284,7 +284,7 @@ export default function Home() {
               </div>
 
               <h1 className="pt-8 font-inter font-bold text-[24px]"> About </h1>
-              <div className="flex items-center">
+              <div className="flex flex-col items-center 2xl:flex-row 2xl:items-center">
                 <div></div>
                 <img src="/nate2.png" className={`mt-5 me-5 rounded-xl h-auto ${nowPlaying ? 'w-140' : 'w-210'}`}></img>
                 <div className={`text-white space-y-4 leading-relaxed mt-5 font-inter overflow-hidden ${nowPlaying ? 'h-100 overflow-y-auto' : ''}`}>
@@ -295,16 +295,15 @@ export default function Home() {
                     My name is Nate, and I&apos;m a spring 2025 computer science graduate from the University of Georgia.
                   </p>
                   <p>
-                    When I first began my studies at the University of Georgia, I initially envisioned myself as a software engineer. I wanted to create programs and applications for people to solve complex problems. But as I progressed through my degree, I discovered something unexpected:
-                  </p>
+                    When I first began my studies at the University of Georgia, I envisioned myself as a software engineer creating programs and applications to solve complex problems. As I progressed through my degree, that vision only strengthened.                  </p>
                   <p className="italic text-gray-300">
-                    My favorite moments weren&apos;t debugging code or optimizing algorithms - they were helping my teammates understand our API system, presenting technical projects to judges at Hackathon, or seeing relief on professors&apos; faces after fixing classroom technology in real-time.
+                    What I discovered was that the most rewarding aspects of engineering weren&apos;t just writing code - they were moments like architecting our team&apos;s API system, presenting technical projects to judges at Hackathons, and implementing real-time solutions to classroom technology challenges.
                   </p>
                   <p className="font-medium">
-                    I realized that my true passion lies in using technology to solve people&apos;s problems and helping others to understand solutions at a more technical level.
+                    I realized that my passion lies in building robust technical solutions while bridging the gap between complex systems and the people who use them.
                   </p>
                   <p>
-                    As I continue my search for work, I am focused on honing my current skills and learning new ones in the process.
+                    As I continue my search for a software engineering role, I am focused on deepening my technical expertise and expanding my skill set across the full development lifecycle.
                   </p>
                   <p className="text-green-400 font-semibold">
                     I&apos;m eager to join your company and start contributing!
