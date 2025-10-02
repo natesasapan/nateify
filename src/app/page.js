@@ -292,7 +292,7 @@ export default function Home() {
                     Hello!
                   </p>
                   <p className="text-lg">
-                    My name is Nate, and I&aposm a spring 2025 computer science graduate from the University of Georgia.
+                    My name is Nate, and I&apos;m a spring 2025 computer science graduate from the University of Georgia.
                   </p>
                   <p>
                     When I first began my studies at the University of Georgia, I initially envisioned myself as a software engineer. I wanted to create programs and applications for people to solve complex problems. But as I progressed through my degree, I discovered something unexpected:
