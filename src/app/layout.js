@@ -22,10 +22,23 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+// Metadata
 export const metadata = {
-  title: "Nateify",
-  description: "A web portfolio made by Nate Sasapan",
-};
+  title: 'Nateify',
+  description: 'Nate Sasapan - Software Developer Portfolio',
+  openGraph: {
+    title: 'Nateify',
+    description: 'Nate Sasapan - Software Developer Portfolio',
+    images: ['/N.png'],
+    url: 'https://natesasapan.me',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nateify',
+    description: 'Nate Sasapan - Software Developer Portfolio',
+    images: ['/N.png'],
+  },
+}
 
 export default function RootLayout({ children }) {
   return (
