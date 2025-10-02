@@ -29,14 +29,14 @@ export const metadata = {
   openGraph: {
     title: 'Nateify',
     description: 'Nate Sasapan - Software Developer Portfolio',
-    images: ['/N.png'],
+    images: ['https://natesasapan.me/N.png'],
     url: 'https://natesasapan.me',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Nateify',
     description: 'Nate Sasapan - Software Developer Portfolio',
-    images: ['/N.png'],
+    images: ['https://natesasapan.me//N.png'],
   },
 }
 
