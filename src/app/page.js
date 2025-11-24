@@ -23,10 +23,11 @@ export default function Home() {
 
   // Work Data
   const workData = [
+    {title: 'Associate Full-Stack Software Developer', imgSrc:'/tmhcc.jpg', company: 'Tokio Marine HCC - A&H Group', dateStarted: 'Nov 2025', dateFinished: 'Present', time: '2:22', duty1: 'Develop complex stored procedures and triggers to automate business logic and ensure data integrity', duty2: 'Develop end-to-end features from database design through API implementation to UI integration', duty3: 'Collaborate with cross-functional teams in Agile sprints, delivering features on 2-week cycles'},
     {title: 'Network Engineer Intern', imgSrc:'/ag.png', company: 'Ansan Group LLC', dateStarted: 'May 2024', dateFinished: 'July 2024', time: '2:24', duty1: 'Updated network documentation and asset inventory for 50+ devices, improving team efficiency and reducing troubleshooting time by 80%', duty2: 'Resolved Level 1 network connectivity issues via ticketing system, achieving average resolution time of 15 minutes', duty3: 'Conducted WiFi coverage analysis across facilities, identifying dead zones and recommending access point placement'},
     {title: 'Technology Student Assistant', imgSrc:'/uga.png', company: 'UGA Science Learning Center', dateStarted: 'June 2022', dateFinished: 'July 2025', time: '3:11', duty1: 'Provide on-site technical consulting during live classroom sessions - assess issues quickly, communicate solutions to faculty, and implement fixes without disrupting ongoing activities', duty2: 'Integrated streamlined troubleshooting methodology that reduced resolution time by 67% (45 to 15 minutes), improving client satisfaction and operational efficiency', duty3: 'Oversaw lost and found operations, including item intake, documentation, storage, and customer communication'},
     {title: 'Research Lab Assistant', imgSrc:'/biochem.png', company: 'Adams Biochemisty & Microbiology Lab', dateStarted: 'Feb 2024', dateFinished: 'Sep 2024', time: '1:45', duty1: 'Designed and implemented database optimization solution reducing equipment location from 20+ minutes to under 2 minutes, improving lab productivity for 15+ researchers', duty2: 'Created Python scripts to automate gene data processing, saving research teams 15 hours of manual work per week', duty3: 'Reorganized laboratory space to maximize equipment accessibility and minimize workflow disruptions'},
-    {title: 'Student - Computer Science', imgSrc:'/uga.png', company: 'University of Georgia', dateStarted: 'August 2020', dateFinished: 'May 2025', time: '5:04', duty1: 'GPA 3.5/4.0', duty2: 'Dean\'s List (4x) Presidential Scholar (1x) ', duty3: 'Studied at Vrije Universiteit in Amsterdam, NL from Fall 2023 - Feb 2024'}
+    {title: 'Student - Computer Science', imgSrc:'/uga.png', company: 'University of Georgia', dateStarted: 'August 2020', dateFinished: 'May 2025', time: '5:04', duty1: 'GPA 3.5/4.0', duty2: 'Dean\'s List (4x) Presidential Scholar (1x) ', duty3: 'Studied at Vrije Universiteit in Amsterdam, NL from Fall 2023 - Feb 2024'},
   ];
 
   // Project Data
@@ -327,7 +328,7 @@ export default function Home() {
                 }
                 className="opacity-0 -translate-x-7 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
                 >
-              <img src="/close.png" className="w-6 h-6 opacity-80 hover:opacity-100"></img>
+              <img src="/close.png" className="w-6 h-6 opacity-80 hover:opacity-100 cursor-pointer"></img>
             </button>
             <h1 className="font-bold ps-2 text-lg -translate-x-8 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">Now Playing</h1>
             </div>
